@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Недвижимость в Армении: Илья, канал и база квартир</title>
+<meta name="description" content="Канал о недвижимости в Армении и закрытая база квартир для аренды и продажи в Telegram.">
+<meta property="og:title" content="Недвижимость в Армении: канал и база квартир">
+<meta property="og:description" content="Честные советы по аренде и покупке и свежая база квартир в Ереване и Армении.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF1F4; --surface:#FFFFFF; --ink:#14202E; --muted:#51606F;
+  --accent:#F28C28; --accent-ink:#14202E; --tuff:#F3D5C9; --line:#D5DBE1;
+  --head:'Unbounded','Arial Black',system-ui,sans-serif;
+  --body:'Onest',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1822; --surface:#182535; --ink:#EEF1F4; --muted:#9DAABA;
+    --accent:#F5A04A; --accent-ink:#14202E; --tuff:#3A2B28; --line:#2A3A4C; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1822; --surface:#182535; --ink:#EEF1F4; --muted:#9DAABA;
+  --accent:#F5A04A; --accent-ink:#14202E; --tuff:#3A2B28; --line:#2A3A4C; color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--body)}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--head);font-weight:700;line-height:1.15;margin:0}
+h1{font-size:clamp(30px,7.2vw,58px);letter-spacing:-.02em;max-width:15ch}
+h2{font-size:clamp(22px,4.6vw,32px);margin-bottom:20px}
+h3{font-size:19px;font-weight:500}
+p{margin:0 0 12px}
+section{padding:52px 0}
+.hero{padding:44px 0 36px}
+.lead{font-size:clamp(17px,2.6vw,20px);color:var(--muted);max-width:52ch;margin:20px 0 0}
+.btn{display:inline-block;text-decoration:none;font:600 16px/1 var(--body);padding:16px 22px;border-radius:12px;background:var(--accent);color:var(--accent-ink);text-align:center}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.btn:focus-visible,summary:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.paths{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+.path{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
+.path.tuff{background:var(--tuff);border-color:transparent}
+.path h3{margin-bottom:10px}
+.path p{color:var(--muted)}
+.path ul{margin:0 0 22px;padding-left:20px}
+.path li{margin-bottom:6px}
+.path .btn{width:100%}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
+.steps li::before{content:counter(s);font:700 18px/40px var(--head);width:40px;height:40px;text-align:center;border-radius:50%;background:var(--ink);color:var(--bg)}
+.steps b{display:block}
+.about{display:grid;gap:24px;grid-template-columns:1.2fr 1fr;align-items:start}
+.about .note{background:var(--surface);border-left:5px solid var(--accent);padding:20px 22px;border-radius:0 14px 14px 0}
+details{border-top:1px solid var(--line);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:600;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;font-size:22px;line-height:1}
+details[open] summary::after{content:"−"}
+details p{margin:10px 0 0;color:var(--muted)}
+.final{background:var(--ink);color:var(--bg);border-radius:22px;padding:36px 26px;margin-bottom:40px}
+.final h2{margin-bottom:12px}
+.final p{opacity:.85;max-width:46ch}
+.final .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.final .btn.alt{color:var(--bg);border-color:var(--bg)}
+.soc{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)}
+.soc a{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.soc a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.soc strong{display:block;font:500 18px/1.2 var(--head);margin-bottom:6px}
+.soc span{color:var(--muted);font-size:15px}
+@media (max-width:720px){.soc{grid-template-columns:1fr}}
+footer{padding:0 0 36px;color:var(--muted);font-size:14px}
+@media (max-width:720px){
+  .paths,.about{grid-template-columns:1fr}
+  section{padding:40px 0}
+  .final .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<section class="hero">
+  <h1>Квартиры в Армении без лишней суеты</h1>
+  <p class="lead">Я Илья, риелтор в Армении. Помогаю снять, купить и продать квартиру. В канале делюсь тем, что знаю сам, а в закрытой базе собираю свежие варианты для аренды и продажи.</p>
+  <p style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
+    <a class="btn" href="https://t.me/ilya_realtor_am">Читать канал</a>
+    <a class="btn alt" href="https://t.me/real_estate_baza">Открыть базу квартир</a>
+  </p>
+</section>
+
+<section aria-labelledby="paths">
+  <h2 id="paths">Выберите, что вам нужно</h2>
+  <div class="paths">
+    <div class="path tuff">
+      <h3>Канал: советы и опыт</h3>
+      <p>Для тех, кто только думает о переезде или покупке.</p>
+      <ul>
+        <li>как снять квартиру и не нарваться на проблемы</li>
+        <li>что проверять в договоре и у собственника</li>
+        <li>районы Еревана и цены простым языком</li>
+        <li>лучшие квартиры из базы</li>
+      </ul>
+      <a class="btn" href="https://t.me/ilya_realtor_am">Подписаться на канал</a>
+    </div>
+    <div class="path">
+      <h3>Группа: база квартир</h3>
+      <p>Для тех, кто уже ищет жильё.</p>
+      <ul>
+        <li>квартиры для аренды и продажи по всей Армении</li>
+        <li>фото, цена, район и условия в каждом объявлении</li>
+        <li>новые варианты появляются в одном месте</li>
+        <li>можно сразу написать мне по понравившейся квартире</li>
+      </ul>
+      <a class="btn alt" href="https://t.me/real_estate_baza">Войти в группу</a>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="how">
+  <h2 id="how">Как это работает</h2>
+  <ol class="steps">
+    <li><div><b>Заходите в группу</b>Смотрите квартиры и выбираете подходящие.</div></li>
+    <li><div><b>Пишете мне по варианту</b>Уточняю актуальность, условия и отвечаю на вопросы.</div></li>
+    <li><div><b>Организую просмотр</b>Показываю квартиру или помогаю посмотреть её дистанционно.</div></li>
+    <li><div><b>Сопровождаю сделку</b>Помогаю с договором и заселением или оформлением покупки.</div></li>
+  </ol>
+</section>
+
+<section aria-labelledby="about">
+  <h2 id="about">Кто ведёт канал</h2>
+  <div class="about">
+    <div>
+      <p>Я Илья. Говорю по-русски и по-армянски, поэтому договариваюсь с собственниками напрямую и объясняю условия понятно.</p>
+      <p>Работаю с арендой и продажей и пишу в канале так, как рассказал бы знакомому: по делу и без давления.</p>
+    </div>
+    <div class="note">
+      Во многих случаях собственник сам платит процент, и тогда арендатор не платит комиссию. Условия по каждой квартире я называю заранее.
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="faq">
+  <h2 id="faq">Частые вопросы</h2>
+  <details><summary>Группа и канал платные?</summary><p>Нет, вступить в них можно бесплатно.</p></details>
+  <details><summary>Нужно ли знать армянский?</summary><p>Нет. Общаемся по-русски, с собственниками я договариваюсь сам.</p></details>
+  <details><summary>Квартиры в базе актуальны?</summary><p>Я проверяю наличие перед показом. Если квартира сдана, пишу об этом в группе.</p></details>
+  <details><summary>Вы работаете только с русскоязычными клиентами?</summary><p>Нет, помогаю всем, кто ищет квартиру в Армении.</p></details>
+  <details><summary>Можно выбрать квартиру, пока я ещё не в Армении?</summary><p>Да. Напишите мне, подберу варианты и организую дистанционный просмотр.</p></details>
+</section>
+
+<section aria-labelledby="social">
+  <h2 id="social">Я в соцсетях</h2>
+  <div class="soc">
+    <a href="https://www.threads.com/@ilyakhalatyan"><strong>Threads</strong><span>Блог риелтора</span></a>
+    <a href="https://www.tiktok.com/@estate_ilya"><strong>TikTok</strong><span>Видео квартир</span></a>
+    <a href="https://www.instagram.com/estate_ilya"><strong>Instagram</strong><span>Мой профиль</span></a>
+  </div>
+</section>
+
+<div class="final">
+  <h2>Начните с канала или сразу с базы</h2>
+  <p>Подписка занимает минуту. Остальное обсудим в Telegram.</p>
+  <div class="row">
+    <a class="btn" href="https://t.me/ilya_realtor_am">Канал</a>
+    <a class="btn alt" href="https://t.me/real_estate_baza">База квартир</a>
+  </div>
+</div>
+
+<footer>© Илья, недвижимость в Армении</footer>
+</main>
+</body>
+</html>

@@ -84,7 +84,20 @@ footer{padding:0 0 36px;color:var(--muted);font-size:14px}
   section{padding:40px 0}
   .final .btn{width:100%}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero>*{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.hero>:nth-child(2){animation-delay:.12s}
+.hero>:nth-child(3){animation-delay:.24s}
+.btn{transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(20,32,46,.18)}
+.btn:active{transform:translateY(0) scale(.98);box-shadow:none}
+.path,.soc a{transition:transform .2s ease,border-color .2s ease}
+.path:hover,.soc a:hover{transform:translateY(-3px);border-color:var(--accent)}
+details[open] p{animation:rise .35s ease both}
+summary::after{transition:transform .2s ease}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none;transition-delay:var(--d,0s)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
@@ -179,5 +192,27 @@ footer{padding:0 0 36px;color:var(--muted);font-size:14px}
 
 <footer>© Илья, недвижимость в Армении</footer>
 </main>
+<script>
+(function(){
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var els=document.querySelectorAll('section:not(.hero) h2,.path,.steps li,.about>*,.soc a,details,.final');
+  document.documentElement.classList.add('js');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var el=e.target;
+      io.unobserve(el);
+      el.classList.add('in');
+      setTimeout(function(){el.classList.remove('rv','in');el.style.removeProperty('--d');},1400);
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -6% 0px'});
+  els.forEach(function(el){
+    var i=Array.prototype.indexOf.call(el.parentNode.children,el);
+    el.style.setProperty('--d',(Math.min(i,4)*0.09)+'s');
+    el.classList.add('rv');
+    io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
